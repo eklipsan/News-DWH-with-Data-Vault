@@ -1,0 +1,23 @@
+import psycopg2
+
+con = psycopg2.connect(
+        host = 'lallah.db.elephantsql.com',
+        database = 'whkyehyd',
+        user = 'whkyehyd',
+        password = 'CMCJihnR1BxvpzF77-GLgh2cO9vBMEJc'
+    )
+
+
+con = psycopg2.connect( # Staging
+        host = 'snuffleupagus.db.elephantsql.com',
+        database = 'wpnpltzb',
+        user = 'wpnpltzb',
+        password = 'zkU2gefzyFyITIjarDapIqKsq99_aFp9'
+    )
+
+con = psycopg2.connect( # Anchor
+	host = 'snuffleupagus.db.elephantsql.com',
+	database = 'jzzbafge',
+	user = 'jzzbafge',
+	password = 'YuvAv8H-vAQhSLtii-lUBH02tHQ2xSjg'
+)
