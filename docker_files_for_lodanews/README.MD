@@ -1,0 +1,1 @@
+### This folder contains files for creating a docker image of lodanews. For more information about the image, go to Docker Hub - [eklipsan](https://hub.docker.com/repository/docker/eklipsan/lodanews/general)
