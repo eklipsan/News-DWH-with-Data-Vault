@@ -90,10 +90,9 @@ def create_staging():
         password = environ['DB_PASSWORD']
     )
     cur = con.cursor()
-    cur.execute(
-    '''
-    drop table if exists News;
-    create table News (
+    cur.execute(f'''
+    drop table if exists {environ['TABLE_NAME']};
+    create table {environ['TABLE_NAME']} (
     id serial primary key,
     title varchar(255),
     link varchar(255),
@@ -125,16 +124,15 @@ def load_staging(cleaned_data, name_data):
         )
     # Create a cursor object
     cur = con.cursor()
-    # Fetch all titles from the News table
-    cur.execute("SELECT title from News")
+    # Fetch all titles from the table
+    cur.execute(f"SELECT title from {environ['TABLE_NAME']}")
     checking_list = [i[0] for i in cur.fetchall()]
-    # Insert cleaned data into the News table
+    # Insert cleaned data into the table
     for row in cleaned_data:
         if row['title'] not in checking_list:
             try:
-                cur.execute(
-            '''
-            insert into News (title, link, keyword, description, source_id, country, language, pubDate, pubTime) values
+                cur.execute(f'''
+            insert into {environ['TABLE_NAME']} (title, link, keyword, description, source_id, country, language, pubDate, pubTime) values
             (%(title)s, %(link)s, %(keywords)s, %(description)s, %(source_id)s, %(country)s, %(language)s, %(pubDate)s, %(pubTime)s)
             ''',
             row
@@ -148,8 +146,8 @@ def load_staging(cleaned_data, name_data):
     with open('/app/log_news/report.log', 'a') as f:
         print(f'SUCCESS: staging loading is done {datetime.today()}', file=f)
     # Delete any rows with null keyword or description values
-    cur.execute('''
-    delete from News
+    cur.execute(f'''
+    delete from {environ['TABLE_NAME']}
     where keyword is null or description is null
     ''')
     # Commit changes and close the connection
