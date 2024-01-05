@@ -5,39 +5,46 @@ import psycopg2
 
 
 def load_json(url: str, name: str = '[language category]') -> list:
-        """
-        Downloads a JSON file through an API.
-        The JSON file consists of three parts:
-        - status: upload status (e.g. 'success')
-        - totalResults: result
-        - results: list with strings of words
-        - nextPage: link to the next page
-        Args:
-        - url: str - URL of the JSON file to download
-        - name: str - optional name of the file being downloaded
-        Returns:
-        - list: list of strings of words from the JSON file, if successful
-        - str: error message, if unsuccessful
-        """
-        error_msg = f"ERROR: Could not load {name}."
-        try:
-            # Attempt to download the JSON file
-            raw_data = json.loads(requests.get(url).text)
-        except:
-            # If unsuccessful, log the error message to a file and return the error message
-            with open('report.log', 'a') as f:
-                print(error_msg, 'Something happened with the URL (could not get JSON format or your URL is invalid)', datetime.today(), file=f)
-            return error_msg
-        if raw_data['status'] == 'success':
-            # If successful, log a success message to a file and return the list of words
-            with open('report.log', 'a') as f:
-                print(f'SUCCESS: {name} has loaded successfully', datetime.today(), file=f)
-            return raw_data['results']
-        else:
-            # If unsuccessful, log the error message to a file and return the error message
-            with open('report.log', 'a') as f:
-                print(error_msg, 'Something happened to the server (401 or your limit of API requests is exceeded)', datetime.today(), file=f)
-            return error_msg
+    """Downloads a JSON file through an API.
+    The JSON file consists of three parts:
+    - status: upload status (e.g. 'success')
+    - totalResults: result
+    - results: list with strings of words
+    - nextPage: link to the next page
+    Args:
+    - url: str - URL of the JSON file to download
+    - name: str - optional name of the file being downloaded
+    Returns:
+    - list: list of strings of words from the JSON file, if successful
+    - str: error message, if unsuccessful
+    """
+    error_msg = f"ERROR: Could not load {name}."
+    try:
+        # Attempt to download the JSON file
+        raw_data = json.loads(requests.get(url).text)
+    except:
+        # If unsuccessful, log the error message to a file
+        # and return the error message
+        with open('report.log', 'a') as f:
+            print(error_msg, 'Something happened with the URL'
+                  '(could not get JSON format or your URL is invalid)',
+                  datetime.today(), file=f)
+        return error_msg
+    if raw_data['status'] == 'success':
+        # If successful, log a success message to a file
+        # and return the list of words
+        with open('report.log', 'a') as f:
+            print(f'SUCCESS: {name} has loaded successfully',
+                  datetime.today(), file=f)
+        return raw_data['results']
+    else:
+        # If unsuccessful, log the error message to a file
+        # and return the error message
+        with open('report.log', 'a') as f:
+            print(error_msg, 'Something happened to the server'
+                  '(401 or your limit of API requests is exceeded)',
+                  datetime.today(), file=f)
+        return error_msg
 
 
 def clean(raw_data):
@@ -79,7 +86,8 @@ def clean(raw_data):
     else:
         # Log error if input is not a list of dictionaries
         with open('report.log', 'a') as f:
-            print('ERROR: Wrong type of data in function "clean"', datetime.today())     
+            print('ERROR: Wrong type of data in function "clean"',
+                  datetime.today(), file=f)
 
 
 def load_staging(cleaned_data, name_data):
@@ -89,11 +97,11 @@ def load_staging(cleaned_data, name_data):
     """
     # Connect to the database
     con = psycopg2.connect(
-            host = 'snuffleupagus.db.elephantsql.com',
-            database = 'wpnpltzb',
-            user = 'wpnpltzb',
-            password = 'zkU2gefzyFyITIjarDapIqKsq99_aFp9'
-        )
+        host='snuffleupagus.db.elephantsql.com',
+        database='wpnpltzb',
+        user='wpnpltzb',
+        password='zkU2gefzyFyITIjarDapIqKsq99_aFp9'
+    )
     # Create a cursor object
     cur = con.cursor()
     # Fetch all titles from the News table
@@ -104,16 +112,17 @@ def load_staging(cleaned_data, name_data):
         if row['title'] not in checking_list:
             try:
                 cur.execute(
-            '''
-            insert into News (title, link, keyword, description, source_id, country, language, pubDate, pubTime) values 
+                    '''
+            insert into News (title, link, keyword, description, source_id, country, language, pubDate, pubTime) values
             (%(title)s, %(link)s, %(keywords)s, %(description)s, %(source_id)s, %(country)s, %(language)s, %(pubDate)s, %(pubTime)s)
             ''',
-            row
-            )
+                    row
+                )
             except psycopg2.Error as e:
                 # Log any errors to a file
                 with open('report.log', 'a') as f:
-                    print(f'ERROR: Something happened with loading staging {e} {datetime.today()}', file=f)
+                    print(
+                        f'ERROR: Something happened with loading staging {e} {datetime.today()}', file=f)
                 return e
     # Log success to a file
     with open('report.log', 'a') as f:
@@ -128,6 +137,7 @@ def load_staging(cleaned_data, name_data):
     con.close()
     # Log success to a file
     with open('report.log', 'a') as f:
-        print(f'SUCCESS: {name_data} for staging layer has loaded successfully {datetime.today()}', file=f)
-    
+        print(
+            f'SUCCESS: {name_data} for staging layer has loaded successfully {datetime.today()}', file=f)
+
     return True

@@ -25,12 +25,14 @@ try:
     print(load_staging(usa_business, 'usa_business'))
     print(load_staging(usa_technology, 'usa_technology'))
     print("DONE")
-    
+
     # write success message to log file
     with open('report.log', 'a') as f:
-        print(f"SUCCESS: Loading into the staging layer has been completed {datetime.today()}", file=f)
+        print(f"SUCCESS: Loading into the staging layer has been completed"
+              "{datetime.today()}", file=f)
 except:
     # write error message to log file and print error message to console
     with open('report.log', 'a') as f:
-        print(f"ERROR: Loading into the staging layer has not been successful {datetime.today()}", file=f)
+        print(
+            f"ERROR: Loading into the staging layer has not been successful {datetime.today()}", file=f)
     print("Something went wrong with the main file")
