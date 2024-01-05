@@ -175,3 +175,60 @@ SUCCESS: usa sports has loaded successfully 2023-06-15 13:04:01.294362
 SUCCESS: usa_sports for staging layer has loaded successfully 2023-06-15 13:04:02.564165
 SUCCESS: usa sports has loaded successfully 2023-06-15 13:04:23.230581
 SUCCESS: usa_sports for staging layer has loaded successfully 2023-06-15 13:04:24.785682
+SUCCESS: russian sports has loaded successfully 2024-01-05 14:52:19.415648
+SUCCESS: russian business has loaded successfully 2024-01-05 14:52:20.327688
+SUCCESS: russian technology has loaded successfully 2024-01-05 14:52:24.282679
+SUCCESS: usa sports has loaded successfully 2024-01-05 14:52:25.167806
+SUCCESS: usa business has loaded successfully 2024-01-05 14:52:26.111505
+SUCCESS: usa technology has loaded successfully 2024-01-05 14:52:27.111444
+SUCCESS: staging loading is done 2024-01-05 14:52:40.132302
+SUCCESS: russian_sports for staging layer has loaded successfully 2024-01-05 14:52:40.299106
+SUCCESS: staging loading is done 2024-01-05 14:52:41.884445
+SUCCESS: russian_business for staging layer has loaded successfully 2024-01-05 14:52:42.059707
+SUCCESS: staging loading is done 2024-01-05 14:52:43.244932
+SUCCESS: russian_technology for staging layer has loaded successfully 2024-01-05 14:52:43.411253
+SUCCESS: staging loading is done 2024-01-05 14:52:45.156973
+SUCCESS: usa_sports for staging layer has loaded successfully 2024-01-05 14:52:45.328938
+SUCCESS: staging loading is done 2024-01-05 14:52:47.235366
+SUCCESS: usa_business for staging layer has loaded successfully 2024-01-05 14:52:47.410095
+SUCCESS: staging loading is done 2024-01-05 14:52:49.200835
+SUCCESS: usa_technology for staging layer has loaded successfully 2024-01-05 14:52:49.378343
+SUCCESS: Loading into the staging layer has been completed{datetime.today()}
+SUCCESS: russian sports has loaded successfully 2024-01-05 14:54:55.822814
+SUCCESS: russian business has loaded successfully 2024-01-05 14:54:56.748788
+SUCCESS: russian technology has loaded successfully 2024-01-05 14:54:57.559159
+SUCCESS: usa sports has loaded successfully 2024-01-05 14:54:58.545695
+SUCCESS: usa business has loaded successfully 2024-01-05 14:54:59.505287
+SUCCESS: usa technology has loaded successfully 2024-01-05 14:55:00.503447
+SUCCESS: staging loading is done 2024-01-05 14:55:12.756066
+SUCCESS: russian_sports for staging layer has loaded successfully 2024-01-05 14:55:12.921141
+SUCCESS: staging loading is done 2024-01-05 14:55:14.395485
+SUCCESS: russian_business for staging layer has loaded successfully 2024-01-05 14:55:14.570671
+SUCCESS: russian sports has loaded successfully 2024-01-05 14:55:14.751981
+SUCCESS: russian business has loaded successfully 2024-01-05 14:55:15.551586
+SUCCESS: staging loading is done 2024-01-05 14:55:15.887625
+SUCCESS: russian_technology for staging layer has loaded successfully 2024-01-05 14:55:16.062242
+SUCCESS: russian technology has loaded successfully 2024-01-05 14:55:16.372461
+SUCCESS: usa sports has loaded successfully 2024-01-05 14:55:17.165875
+SUCCESS: staging loading is done 2024-01-05 14:55:17.765266
+SUCCESS: usa_sports for staging layer has loaded successfully 2024-01-05 14:55:17.935169
+SUCCESS: usa business has loaded successfully 2024-01-05 14:55:17.976798
+SUCCESS: usa technology has loaded successfully 2024-01-05 14:55:18.763774
+SUCCESS: staging loading is done 2024-01-05 14:55:19.692334
+SUCCESS: usa_business for staging layer has loaded successfully 2024-01-05 14:55:19.887474
+SUCCESS: staging loading is done 2024-01-05 14:55:20.044521
+SUCCESS: russian_sports for staging layer has loaded successfully 2024-01-05 14:55:20.219268
+SUCCESS: staging loading is done 2024-01-05 14:55:21.431218
+SUCCESS: usa_technology for staging layer has loaded successfully 2024-01-05 14:55:21.606338
+SUCCESS: Loading into the staging layer has been completed{datetime.today()}
+SUCCESS: staging loading is done 2024-01-05 14:55:21.641387
+SUCCESS: russian_business for staging layer has loaded successfully 2024-01-05 14:55:21.812517
+SUCCESS: staging loading is done 2024-01-05 14:55:23.063437
+SUCCESS: russian_technology for staging layer has loaded successfully 2024-01-05 14:55:23.234787
+SUCCESS: staging loading is done 2024-01-05 14:55:24.910017
+SUCCESS: usa_sports for staging layer has loaded successfully 2024-01-05 14:55:25.079030
+SUCCESS: staging loading is done 2024-01-05 14:55:26.880334
+SUCCESS: usa_business for staging layer has loaded successfully 2024-01-05 14:55:27.057815
+SUCCESS: staging loading is done 2024-01-05 14:55:28.560974
+SUCCESS: usa_technology for staging layer has loaded successfully 2024-01-05 14:55:28.734586
+SUCCESS: Loading into the staging layer has been completed{datetime.today()}
